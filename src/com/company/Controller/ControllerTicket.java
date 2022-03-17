@@ -24,6 +24,7 @@ public class ControllerTicket {
     public ControllerTicket(String path) {
         this.listaBilete = new Lista<>();
         this.path = path;
+        load();
     }
 
     public void add(Ticket ticket){
@@ -82,7 +83,18 @@ public class ControllerTicket {
         return pozitie;
     }
 
-    public void updateId(int id, int ticketId){
+    public int getSize(){
+
+        return listaBilete.size();
+
+    }
+
+    public void clear(){//nu e ok
+
+        listaBilete.clear();
+    }
+
+    public int updateId(int id, int ticketId){
 
         int pozitie = getPozitie(id);
 
@@ -94,6 +106,7 @@ public class ControllerTicket {
 
         }
 
+        return ticketId;
 
     }
 
@@ -109,16 +122,17 @@ public class ControllerTicket {
 
     }
 
-    public void updateTicketType(int id, String type){
+    public String updateTicketType(int id, String type){
         int pozitie = getPozitie(id);
 
         if (pozitie!=-1){
             Ticket t = listaBilete.get(pozitie);
             t.setTicketType(type);
         }
+        return type;
     }
 
-    public void updateTicketData(int id, String date){
+    public String updateTicketData(int id, String date){
 
         int pozitie = getPozitie(id);
 
@@ -128,6 +142,7 @@ public class ControllerTicket {
 
             t.setTicketDate(date);
         }
+        return date;
     }
 
     public void remove(int id){

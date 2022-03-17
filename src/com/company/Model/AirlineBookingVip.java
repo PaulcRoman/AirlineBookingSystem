@@ -2,14 +2,14 @@ package com.company.Model;
 
 public class AirlineBookingVip extends AirlineBooking {
 
-    public AirlineBookingVip(String airlineBookingId, String airlinePassengerId, String airlineBookingType,String airlineBookingDate){
+    public AirlineBookingVip(int airlineBookingId, String airlinePassengerId, String airlineBookingType,String airlineBookingDate){
         super(airlineBookingId,airlinePassengerId,"VIP",airlineBookingDate);
 
     }
 
         public AirlineBookingVip(String text) {
 
-            super(text.split(",")[0], text.split(",")[1], text.split(",")[2], text.split(",")[3]);
+            super(Integer.parseInt(text.split(",")[0]), text.split(",")[1], text.split(",")[2], text.split(",")[3]);
         }
 
         @Override

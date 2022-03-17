@@ -24,7 +24,6 @@ public class Lista<T> {
             nou.setData(data);
             iterator.setNext(nou);
             nou.setNext(null);
-            head = nou;
 
         }
 
@@ -158,8 +157,9 @@ public class Lista<T> {
     }
 
     public void clear(){
-        while (head != null){
+        if (head != null){
             head.setData(null);
+            head = head.getNext();
         }
     }
 

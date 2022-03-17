@@ -7,7 +7,6 @@ public class Ticket implements Comparable<Ticket>{
     private String ticketType;
     private String ticketDate;
 
-
     public Ticket(int ticketId, int ticketCustomerId, String ticketType, String ticketDate) {
         this.ticketId = ticketId;
         this.ticketCustomerId = ticketCustomerId;

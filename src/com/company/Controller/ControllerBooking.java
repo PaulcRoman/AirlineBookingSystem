@@ -76,7 +76,7 @@ public class ControllerBooking {
 
     }
 
-    public void updateId(int id, int bookingId){
+    public int updateId(int id, int bookingId){
 
         int pozitie = getPozitie(id);
 
@@ -86,10 +86,10 @@ public class ControllerBooking {
             ab.setAirlinesBookingId(bookingId);
 
         }
-
+        return bookingId;
     }
 
-    public void updatePaxId(int id, String paxId){
+    public String updatePaxId(int id, String paxId){
 
         int pozitie = getPozitie(id);
 
@@ -100,25 +100,31 @@ public class ControllerBooking {
             ab.setAirlinePassengerId(paxId);
 
         }
-
+        return paxId;
     }
 
-    public void updateBookingType(int id, String bookingType){
+    public String updateBookingType(int id, String bookingType){
 
         int pozitie = getPozitie(id);
 
-        AirlineBooking ab = listaBooking.get(pozitie);
+        if (pozitie != -1) {
+            AirlineBooking ab = listaBooking.get(pozitie);
 
-        ab.setAirlineBookingType(bookingType);
+            ab.setAirlineBookingType(bookingType);
+        }
+        return bookingType;
     }
 
-    public void updateBookingDate(int id, String bookingDate){
+    public String updateBookingDate(int id, String bookingDate){
 
         int pozitie = getPozitie(id);
 
-        AirlineBooking ab = listaBooking.get(pozitie);
+        if (pozitie != -1) {
+            AirlineBooking ab = listaBooking.get(pozitie);
 
-        ab.setAirlineBookingDate(bookingDate);
+            ab.setAirlineBookingDate(bookingDate);
+        }
+        return bookingDate;
     }
 
     public void remove(int id){

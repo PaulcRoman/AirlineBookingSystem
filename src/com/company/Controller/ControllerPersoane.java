@@ -63,7 +63,6 @@ public class ControllerPersoane {
 
     public void afisare() {
 
-
     listaPersoane.traverse();
 
     }
@@ -94,7 +93,6 @@ public class ControllerPersoane {
         return nume;
 
     }
-
 
     public String updateEmail(int id, String email){
 
@@ -149,10 +147,14 @@ public class ControllerPersoane {
         return isAdmin;
     }
 
-    public void delete(int id){
+    public boolean delete(int id){
 
-        listaPersoane.stergePozitie(id);
+        if (id != -1) {
 
+            listaPersoane.remove(id);
+            return true;
+        }
+        return false;
     }
 
     public void save(){
@@ -165,8 +167,6 @@ public class ControllerPersoane {
 
             printWriter.println(this);
             printWriter.close();
-
-
 
         }catch (Exception e){
 
@@ -204,20 +204,28 @@ public class ControllerPersoane {
         return -1;
     }
 
-    public Persoana login(String email, String parola){
-
-        Node<Persoana> it = listaPersoane.iterator();
-
-        while (it !=null){
-            Persoana p = listaPersoane.get();//?
-            if (p.getEmail().equals(email) && p.getPassword().equals(parola)) {
-                return p;
-            }
-            it = it.getNext();
-        }
-
-
-        return null;
-    }
+//    public Persoana login(String email, String parola){
+//
+//        Node<Persoana> it = listaPersoane.iterator();
+//
+//        while (it !=null){
+//            Lista<Persoana> p = listaPersoane;//?
+//            if (p.getEmail().equals(email) && p.getPassword().equals(parola)) {
+//                return p;
+//            }
+//            it = it.getNext();
+//        }
+//
+//        return null;
+//
+//        for (Persoana p : listaPersoane){
+//
+//            if (p.getEmail().equals(email) && p.getPassword().equals(parola)) {
+//                return p;
+//            }
+//
+//        }
+//        return null;
+//    }
 
 }
