@@ -1,8 +1,15 @@
 package com.company;
 
+import com.company.View.ViewLogin;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        ViewLogin viewLogin = new ViewLogin();
+
+        viewLogin.go();
+
+
     }
 }

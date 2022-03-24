@@ -45,15 +45,14 @@ public class ControllerPersoane {
                 if (linie.equals("")==false){
                     Boolean isAdmin = Boolean.parseBoolean(linie.split(",")[5]);
 
-                    if (isAdmin) {
+                    if (isAdmin==true) {
                         listaPersoane.add(new Admin(linie));
-                    } else if (!(isAdmin)) {
+                    } else if (isAdmin==false) {
                         listaPersoane.add(new Pasager(linie));
                     }
                 }
 
             }
-
 
         }catch (Exception e){
 
@@ -204,28 +203,15 @@ public class ControllerPersoane {
         return -1;
     }
 
-//    public Persoana login(String email, String parola){
-//
-//        Node<Persoana> it = listaPersoane.iterator();
-//
-//        while (it !=null){
-//            Lista<Persoana> p = listaPersoane;//?
-//            if (p.getEmail().equals(email) && p.getPassword().equals(parola)) {
-//                return p;
-//            }
-//            it = it.getNext();
-//        }
-//
-//        return null;
-//
-//        for (Persoana p : listaPersoane){
-//
-//            if (p.getEmail().equals(email) && p.getPassword().equals(parola)) {
-//                return p;
-//            }
-//
-//        }
-//        return null;
-//    }
+    public Persoana login(String email, String parola) {
+
+        Persoana persoana = listaPersoane.iterator().getData();
+
+            if (persoana.getPassword().equals(parola) && persoana.getEmail().equals(email)){
+                return persoana;
+            }
+
+        return null;
+    }
 
 }

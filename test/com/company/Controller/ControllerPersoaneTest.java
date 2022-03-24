@@ -115,7 +115,7 @@ class ControllerPersoaneTest {
 
         Pasager client = new Pasager("4,Ion,ion@email.com,ioncont,parola9,false");
         controlPersoane.add(client);
-//        assertEquals("ion@email.com", controlPersoane.login("ion@email.com","parola9").getEmail());
+        assertEquals("ion@email.com", controlPersoane.login("ion@email.com","parola9").getEmail());
     }
 
     @AfterEach

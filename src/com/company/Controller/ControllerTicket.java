@@ -1,9 +1,7 @@
 package com.company.Controller;
 
-
 import com.company.Collections.Lista;
 import com.company.Collections.Node;
-import com.company.Model.AirlineBookingRegular;
 import com.company.Model.Ticket;
 import com.company.Model.TicketRegular;
 import com.company.Model.TicketVip;
@@ -11,9 +9,7 @@ import com.company.Model.TicketVip;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.util.List;
 import java.util.Scanner;
-import java.util.TooManyListenersException;
 
 public class ControllerTicket {
 
@@ -55,14 +51,10 @@ public class ControllerTicket {
                             break;
                     }
 
-
                 }
             }
 
-
-
         }catch (Exception e){
-
 
         }
     }
